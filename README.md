@@ -15,7 +15,7 @@ Then add the Service Provider to the providers array in `config/app.php`:
 
 Command syntax is like `queue:work --daemon` with 2 new options:
 
-   config:env [-o|--overwrite] [-d|--defaults]
+    config:env [-o|--overwrite] [-d|--defaults]
     
 - `--overwrite (-o)` - Don't skip keys that exists in `.env`. (will ask if you want to overwrite or not)
 - `--defaults (-d)` - Ask for defaults. (if you don't use this option command will assume that you want defaults options)
