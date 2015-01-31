@@ -54,3 +54,6 @@ Command syntax is as following:
     
     NOCAPTCHA_SECRET=(TEXT)
     NOCAPTCHA_SITEKEY=(TEXT)
+
+# Packagist
+View this package on Packagist.org: [kduma/dotenv-filler](https://packagist.org/packages/kduma/dotenv-filler)
