@@ -22,7 +22,7 @@ class DotEnvFillerCommand extends Command {
 	 *
 	 * @var string
 	 */
-	protected $description = 'Makes and fills .env file.';
+	protected $description = 'Create/fill missing fields in `.env` file based on rules in `.env.example` file.';
 
 	/**
 	 * Create a new command instance.
@@ -193,8 +193,8 @@ class DotEnvFillerCommand extends Command {
 	protected function getOptions()
 	{
 		return [
-			['overwrite', 'o', InputOption::VALUE_NONE, 'Ask when value exists.', null],
-			['defaults', 'd', InputOption::VALUE_NONE, 'Don\'t use defaults.', null],
+			['overwrite', 'o', InputOption::VALUE_NONE, 'Don\'t skip keys that exists in `.env`. (will ask if you want to overwrite or not)', null],
+			['defaults', 'd', InputOption::VALUE_NONE, 'Ask for defaults. (if you don\'t use this option command will assume that you want defaults options)', null],
 		];
 	}
 

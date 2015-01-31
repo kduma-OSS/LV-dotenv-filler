@@ -1,6 +1,6 @@
 {
   "name": "kduma/dotenv-filler",
-  "description": "Laravel 5 queue runner for webcron (with runtime limit)",
+  "description": "Laravel 5 command to create/fill missing fields in .env file based on rules in .env.example file.",
   "keywords": ["laravel", "cron", "queue"],
   "license": "MIT",
   "authors": [
