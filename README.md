@@ -13,7 +13,7 @@ Then add the Service Provider to the providers array in `config/app.php`:
 
 # Usage
 
-Command syntax is like `queue:work --daemon` with 2 new options:
+Command syntax is as following:
 
     config:env [-o|--overwrite] [-d|--defaults]
     
