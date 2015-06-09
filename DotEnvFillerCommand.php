@@ -2,7 +2,6 @@
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Input\InputArgument;
 
 /**
  * Class DotEnvFillerCommand
@@ -49,7 +48,6 @@ class DotEnvFillerCommand extends Command {
 			ini_set('auto_detect_line_endings', '1');
 			$lines = file($fileUser, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 			ini_set('auto_detect_line_endings', $autodetect);
-			$values = [];
 			foreach($lines as $line){
 				$line = explode('=',$line,2);
 				if(count($line) == 2)
@@ -80,7 +78,6 @@ class DotEnvFillerCommand extends Command {
 				if(!isset($OUTPUT[$key]) || $this->option('overwrite') && $this->confirm('Do you want to overwrite existing value of ' . strtoupper($key) . ' = '.$OUTPUT[$key].'?', false)) {
 					$choice = '';
 					if (isset($matches[3]) && $matches[3] != '') {
-						$rules = [];
 						$defaults = explode('|', $matches[3]);
 						$default = NULL;
 						foreach ($defaults as $d) {
@@ -90,7 +87,6 @@ class DotEnvFillerCommand extends Command {
 							$tmp = explode('=', $tmp[0]);
 							$rule['var'] = $tmp[0];
 							$rule['is'] = $tmp[1];
-							$rules[] = $rule;
 
 							if ($OUTPUT[$rule['var']] == $rule['is']) {
 								$default = $rule['value'];
