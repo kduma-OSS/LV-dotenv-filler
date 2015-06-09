@@ -1,6 +1,6 @@
 {
   "name": "kduma/dotenv-filler",
-  "description": "Laravel 5 command to create/fill missing fields in .env file based on rules in .env.example file.",
+  "description": "Laravel 5.1 command to create/fill missing fields in .env file based on rules in .env.example file.",
   "keywords": ["laravel", "artisan", "dotenv", "env", "command"],
   "license": "MIT",
   "authors": [
@@ -16,11 +16,6 @@
   "autoload": {
     "psr-4": {
       "KDuma\\DotEnvFiller\\": ""
-    }
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-develop": "1.0-dev"
     }
   },
   "minimum-stability": "dev"

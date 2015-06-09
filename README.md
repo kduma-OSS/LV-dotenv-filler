@@ -1,4 +1,10 @@
 # L5-dotenv-filler
+[![Latest Stable Version](https://poser.pugx.org/kduma/dotenv-filler/v/stable.svg)](https://packagist.org/packages/kduma/dotenv-filler) 
+[![Total Downloads](https://poser.pugx.org/kduma/dotenv-filler/downloads.svg)](https://packagist.org/packages/kduma/dotenv-filler) 
+[![Latest Unstable Version](https://poser.pugx.org/kduma/dotenv-filler/v/unstable.svg)](https://packagist.org/packages/kduma/dotenv-filler) 
+[![License](https://poser.pugx.org/kduma/dotenv-filler/license.svg)](https://packagist.org/packages/kduma/dotenv-filler)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/ce0ee9df-9a3d-4832-ace2-eb3a6f5405fe/mini.png)](https://insight.sensiolabs.com/projects/ce0ee9df-9a3d-4832-ace2-eb3a6f5405fe)
+
 Laravel 5.1 command to create/fill missing  fields in `.env` file based on rules in `.env.example` file.
 
 # Setup
