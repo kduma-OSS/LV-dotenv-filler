@@ -1,15 +1,14 @@
 # L5-dotenv-filler
-Laravel 5 command to create/fill missing  fields in `.env` file based on rules in `.env.example` file.
+Laravel 5.1 command to create/fill missing  fields in `.env` file based on rules in `.env.example` file.
 
 # Setup
 Add the package to the require section of your composer.json and run `composer update`
 
-    "kduma/dotenv-filler": "~1.0"
+    "kduma/dotenv-filler": "^1.1"
 
 Then add the Service Provider to the providers array in `config/app.php`:
 
-    'KDuma\DotEnvFiller\DotEnvFillerServiceProvider',
-
+    KDuma\DotEnvFiller\DotEnvFillerServiceProvider::class,
 
 # Usage
 
@@ -54,6 +53,10 @@ Command syntax is as following:
     
     NOCAPTCHA_SECRET=(TEXT)
     NOCAPTCHA_SITEKEY=(TEXT)
+    
+	WEBCRON_SECRET=(TEXT|null)
+	WEBCRON_TIMELIMIT=(TEXT|30|60|null){APP_ENV=local:30|APP_ENV=production:60}
+	WEBCRON_RUNLIMIT=(TEXT|30|60|null){APP_ENV=local:null|APP_ENV=production:null}
 
 # Packagist
 View this package on Packagist.org: [kduma/dotenv-filler](https://packagist.org/packages/kduma/dotenv-filler)

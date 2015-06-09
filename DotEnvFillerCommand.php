@@ -24,11 +24,10 @@ class DotEnvFillerCommand extends Command {
 	 */
 	protected $description = 'Create/fill missing fields in `.env` file based on rules in `.env.example` file.';
 
-	/**
-	 * Create a new command instance.
-	 *
-	 * @return void
-	 */
+    /**
+     * Create a new command instance.
+     *
+     */
 	public function __construct()
 	{
 		parent::__construct();
@@ -58,9 +57,6 @@ class DotEnvFillerCommand extends Command {
 			}
 		}
 
-
-
-
 		$file = base_path('.env.example');
 		if(!file_exists($file)){
 			$this->error('.env.example don\'t exists');
@@ -81,7 +77,7 @@ class DotEnvFillerCommand extends Command {
 
 		foreach($values as $key => $value){
 			if (preg_match("/^\\(([^\\)]+)\\)({([^\\}]+)})?$/us", $value, $matches)) {
-				if(!isset($OUTPUT[$key]) || $this->option('overwrite') && $this->confirm('Do you want to overwrite existing value of ' . strtoupper($key) . ' = '.$OUTPUT[$key].'? [y|N]', false)) {
+				if(!isset($OUTPUT[$key]) || $this->option('overwrite') && $this->confirm('Do you want to overwrite existing value of ' . strtoupper($key) . ' = '.$OUTPUT[$key].'?', false)) {
 					$choice = '';
 					if (isset($matches[3]) && $matches[3] != '') {
 						$rules = [];
@@ -101,7 +97,7 @@ class DotEnvFillerCommand extends Command {
 							}
 						}
 						if (!is_null($default)) {
-							if (!$this->option('defaults') || $this->confirm('Do you want to use default value for ' . strtoupper($key) . ' = ' . $default . '? [Y|n]', true)) {
+							if (!$this->option('defaults') || $this->confirm('Do you want to use default value for ' . strtoupper($key) . ' = ' . $default . '?', true)) {
 								$choice = $default;
 								$OUTPUT[$key] = $choice;
 								$CHANGES[$key] = $choice;
@@ -162,8 +158,8 @@ class DotEnvFillerCommand extends Command {
 			$OUTPUT = implode("\n\n", $OUTPUT);
 
 			$this->info($OUTPUT);
-//			$this->table(['Group','Key','Value'],$TABLE);
-			if($this->confirm('Do you want to write above content to .env file? [Y|n]', true)){
+			// DEBUG: $this->table(['Group','Key','Value'],$TABLE);
+			if($this->confirm('Do you want to write above content to .env file?', true)){
 				file_put_contents($fileUser, $OUTPUT);
 				$this->info('File written.');
 			}
@@ -180,9 +176,7 @@ class DotEnvFillerCommand extends Command {
 	 */
 	protected function getArguments()
 	{
-		return [
-//			['example', InputArgument::REQUIRED, 'An example argument.'],
-		];
+		return [];
 	}
 
 	/**
